@@ -1,0 +1,37 @@
+<h5>Exemplos de Pipe</h5>
+
+<p><b>Titulo:</b> {{ livro.titulo | uppercase | camelCase:'Coco' }}</p>
+<p><b>Classificação:</b> {{ livro.rating | number:'1.1-2' }}</p>
+<p><b>Numero de Paginas:</b> {{ livro.numeroPaginas }}</p>
+<p><b>Preço:</b> {{ livro. preco | currency:'BRL' | lowercase }}</p>
+<p><b>Data de Lancamento:</b> {{ livro.dataLancamento }}</p>
+<p><b>Url:</b> {{ livro.url}}</p>
+<br />
+<p><b>Livro: </b>{{ livro | json }}</p>
+
+<input type="text" [(ngModel)]="filtro">
+<br />
+<input type="text" #novoValor>
+
+<button (click)="addLivro(novoValor.value)">Novo</button>
+
+<ul>
+	<li *ngFor="let liv of livros | filtroArray: filtro">{{ liv }}</li>
+</ul>
+
+<h5>Pipe Impuro</h5>
+
+<ul>
+	<li *ngFor="let liv of livros | filtroArrayInpuro: filtro">{{ liv }}</li>
+</ul>
+
+<h5>Maneira correta de filtrar arrays</h5>
+
+<ul>
+	<li *ngFor="let livretos of getLivros()">{{ livretos }}</li>
+</ul>
+
+
+<p>{{ valorAsync | async  }}</p>
+
+<p>{{ valorAsync2 | async  }}</p>

@@ -1,0 +1,18 @@
+<h5>Diretiva *NgFor</h5>
+
+<ul>
+	<li *ngFor="let curso of cursos, let i = index">{{i + 1}} - {{curso}}</li>
+</ul>
+
+<h5>Removendo o *</h5>
+
+<!-- ficou cagado -->
+<ul>
+	<li template="ngFor let curso of cursos, let i = index">{{i + 1}} - {{curso}}</li>
+</ul>
+<!-- não rolou
+<ul>
+	<template ngFor [ngForOf]="cursos" let-curso let-i="index">
+		<li>{{i + 1}} - {{curso}}</li>
+	</template>
+</ul> -->

@@ -1,0 +1,69 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form-row">
+	<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+		<label for="nome">Nome</label>
+		<input type="text" name="nome" id="nome" class="form-control" id="exampleInputPassword1" placeholder="Nome" [(ngModel)]="usuario.nome" required #nome="ngModel" [class.is-invalid]="!nome.valid && nome.touched">
+		<div *ngIf="!nome.valid && nome.touched" class="invalid-feedback" role="alert">
+			Nome é obrigatório!!
+		</div>
+	</div>
+	<div class="form-group  col-sm-12 col-md-12 col-lg-12 col-xl-12">
+		<label for="email">E-mail</label>
+		<input type="email" name="email" id="email" class="form-control" aria-describedby="emailHelp" placeholder="E-mail" [(ngModel)]="usuario.email" required email #email="ngModel" [class.is-invalid]="verificaValidTouched(email)">
+		<app-campo-control-erro [mostrarErro]="verificaValidTouched(email)" msgErro="Digite um e-mail válido!"></app-campo-control-erro>		
+
+		<small id="emailHelp" class="form-text text-muted">Nunca compartilhe seu e-mail com outras pessoas.</small>		
+	</div>
+	
+	<div ngModelGroup="endereco" class="form-row">
+		<div class="form-group  col-sm-12 col-md-3 col-lg-3 col-xl-3">
+			<label for="cep">CEP</label>
+			<input type="text" name="cep" id="cep" class="form-control" (blur)="consultaCEP(cep, f)"  placeholder="CEP" ngModel required #cep="ngModel" [ngClass]="aplicaCssInputErro(cep)">
+			<app-campo-control-erro [mostrarErro]="verificaValidTouched(cep)" msgErro="CEP é requerido."></app-campo-control-erro>
+		</div>
+	
+		<div class="form-group  col-sm-12 col-md-3 col-lg-3 col-xl-3">
+			<label for="numero">Número</label>
+			<input type="text" name="numero" id="numero" class="form-control" placeholder="Número" ngModel required  #numero="ngModel" [ngClass]="aplicaCssInputErro(numero)">
+			<app-campo-control-erro [mostrarErro]="verificaValidTouched(numero)" msgErro="Número é um campo requerido"></app-campo-control-erro>		
+		</div>
+	
+		<div class="form-group  col-sm-12 col-md-6 col-lg-6 col-xl-6">
+			<label for="complemento">complemento</label>
+			<input type="text" name="complemento" id="complemento" class="form-control" placeholder="Complemento" ngModel>
+		</div>
+		
+		<div class="form-group  col-sm-12 col-md-12 col-lg-12 col-xl-12">
+			<label for="rua">Rua</label>
+			<input type="text" name="rua" id="rua" class="form-control" placeholder="Rua" ngModel required  #rua="ngModel" [ngClass]="aplicaCssInputErro(rua)">
+			<app-campo-control-erro [mostrarErro]="verificaValidTouched(rua)" msgErro="Rua é um campo requerido"></app-campo-control-erro>
+		</div>
+	
+		
+		<div class="form-group  col-sm-12 col-md-5 col-lg-5 col-xl-5">
+			<label for="bairro">Bairro</label>
+			<input type="text" name="bairro" id="bairro" class="form-control" placeholder="Bairro" ngModel required  #bairro="ngModel" [ngClass]="aplicaCssInputErro(bairro)">
+			<app-campo-control-erro [mostrarErro]="verificaValidTouched(bairro)" msgErro="Bairro é um campo requerido"></app-campo-control-erro>
+		</div>
+	
+	
+		<div class="form-group  col-sm-8 col-md-5 col-lg-5 col-xl-5">
+			<label for="cidade">Cidade</label>
+			<input type="text" name="cidade" id="cidade" class="form-control" placeholder="Cidade" ngModel required  #cidade="ngModel" [ngClass]="aplicaCssInputErro(cidade)">
+			<app-campo-control-erro [mostrarErro]="verificaValidTouched(cidade)" msgErro="Cidade é um campo requerido"></app-campo-control-erro>
+		</div>
+		
+		<div class="form-group  col-sm-4 col-md-2 col-lg-2 col-xl-2">
+			<label for="UF">UF</label>
+			<input type="text" name="uf" id="uf" class="form-control" placeholder="UF" ngModel required  #uf="ngModel" [ngClass]="aplicaCssInputErro(uf)">
+			<app-campo-control-erro [mostrarErro]="verificaValidTouched(uf)" msgErro="UF é um campo requerido"></app-campo-control-erro>		
+		</div>	
+
+	</div>
+
+
+	<div class="form-group  col-sm-12 col-md-12 col-lg-12 col-xl-12">
+		<button type="submit" class="btn btn-primary" [disabled]="!f.valid" >Submit</button>
+	</div>
+
+	<app-form-debug [form]="f"></app-form-debug>
+</form>

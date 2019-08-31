@@ -1,0 +1,48 @@
+<p appFundoAmarelo>
+	Texto com fundo Amarelo.
+</p>
+
+<button appFundoAmarelo>Teste de diretiva</button>
+
+<br/>
+<br/>
+
+<p appHighlightMouse>Texto com highLight de mouse</p>
+
+<br/>
+<br/>
+
+<p appHighllight [defaultColor]="'gray'" [appHighllight]="'red'">Texto com highLight com cores customizadas</p>
+
+
+<br/>
+<br/>
+<p [appHighllight]="'red'" [defaultColor]="'gray'">Texto com highLight com cores customizadas</p>
+
+
+<br/>
+<br/>
+
+<div *ngIf="mostrarCursos">
+	Lista de Cursos aqui...
+</div>
+<div *ngElse="mostrarCursos">
+	Não existem cursos para serem listados!!!
+</div>
+
+
+<br />
+
+<button (click)="OnMotrarCurso()">Mostrar ou esconder Cursos</button>
+
+<br/>
+<br/>
+<!-- 
+<div *ngIf="mostrarCursos">
+	Lista de Cursos aqui...
+</div>
+<template [ngElse]="mostrarCursos">
+	<div>
+		Não existem cursos para serem listados!!!
+	</div>
+</template> -->
