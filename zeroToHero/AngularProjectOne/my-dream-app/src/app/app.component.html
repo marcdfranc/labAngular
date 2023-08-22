@@ -350,6 +350,33 @@
 
   </div>
 
+  <h1>Including my text: <span [style.color]="myColor">{{ courseName }}</span></h1>
+
+  <p>Style Binding <b [style.color]="flag? myColor : 'green'" [style.font-size.px]="32">Some text</b></p>
+  
+  <p>Ternary <b [style.color]="flag? myColor : '#ff0000'">Some text</b></p>
+
+  
+
+  <P>Test operations (15 + 7) is equal: {{ 15 + 7 }}</P>
+  
+  <P>test interpolation, my full name is: {{ firstName + ' ' + lastName  }}</P>
+  
+  <P>lenght of course is : {{ courseName.length  }}</P>
+  
+  <P>Upercase change for course : {{ courseName.toUpperCase()  }}</P>
+
+  interpolation: <input type="text" value="{{ firstName }}" id="textBox1" disabled="{{flag}}"/>
+  propoerty bind: <input type="text" [value]="lastName" id="textBox2" [disabled]="flag" />
+
+  <p>
+    Event Binding
+    <button (click)="changeFlag()">Pres to change flag</button>
+  </p>
+  
+
+  <course></course>
+
   <!-- Resources -->
   <h2>Resources</h2>
   <p>Here are some links to help you get started:</p>

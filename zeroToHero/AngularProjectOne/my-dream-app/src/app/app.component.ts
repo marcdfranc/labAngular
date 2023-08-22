@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-dream-app';
+  title = 'Now is serious my-dream-app';
+  courseName = "This is my Angular course";
+
+  firstName = "Marcelo";
+  lastName = "Francisco";
+
+  testInterpolation = `${this.firstName} ${this.lastName}`;
+
+  flag = false;
+
+  myColor = "#ff00CC";
+
+  changeFlag = () => {
+    this.flag = !this.flag;
+  }
 }
