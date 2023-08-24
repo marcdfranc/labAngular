@@ -1,0 +1,40 @@
+.container {
+    display: grid;
+    grid-template-columns: 50% auto;
+    color: #fff;
+    padding: .3em 1em;
+}
+
+.col {
+    padding: .4em 1.3;
+}
+
+.color-dark {
+    background-color: #2885c4;
+}
+
+.color-light {
+    background-color: #57b3f1;
+}
+
+input.text {
+    border: 0;
+    padding: 1em;
+    width: 90%;
+    margin-bottom: 2em;
+}
+
+input.btn {
+    border: 0;
+    display: block;
+    padding: 1em 3em;
+    background-color: #A5F883;
+    color: #003a61;
+}
+
+.project-conatiner {
+    background-color: #3fa0e1;
+    padding: .5em;
+    font-weight: bold;
+    cursor: pointer;
+}
