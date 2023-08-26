@@ -1,0 +1,9 @@
+[
+	{"id": 1, "name": "Marcelo", "age": 46, "gender": "Male"},
+	{"id": 2, "name": "Esther", "age": 7, "gender": "Female"},
+	{"id": 3, "name": "Diego", "age": 18, "gender": "Male"},
+	{"id": 4, "name": "Isabel", "age": 38, "gender": "Female"},
+	{"id": 5, "name": "Sarah", "age": 22, "gender": "Female"},
+	{"id": 6, "name": "Marcilio", "age": 69, "gender": "Male"},
+	{"id": 7, "name": "Eduardo", "age": 23, "gender": "Male"}		
+]

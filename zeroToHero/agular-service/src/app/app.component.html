@@ -1,0 +1,16 @@
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Age</th>
+		</tr>
+	</thead>
+	<tbody *ngFor="let item of persons">
+		<tr>
+			<td>{{ item.name }}</td>
+			<td>{{ item.age }}</td>
+		</tr>
+	</tbody>
+</table>
+
+<app-person-details />
