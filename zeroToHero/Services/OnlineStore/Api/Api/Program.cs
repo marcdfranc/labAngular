@@ -1,4 +1,5 @@
 using Api.Extensions;
+using Api.Middleware;
 using Microsoft.EntityFrameworkCore;
 using Repository;
 
@@ -19,6 +20,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseAuthorization();
 

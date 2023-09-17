@@ -8,8 +8,8 @@ public class ProductValidator : AbstractValidator<ProductData>
 {
     public ProductValidator(DataContext context)
     {
-        RuleFor(x => x.Category)
-            .Must(category => context.Categories.Any(c => c.Name == category))
-            .WithMessage(x => $"{x.Category} is not a valid Category");
+        RuleFor(x => x.CategoryId)
+            .Must(categoryId => context.Categories.Any(c => c.Id == categoryId))
+            .WithMessage(x => $"{x.CategoryId} is not a valid 'CategoryId'");
     }
 }

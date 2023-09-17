@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  onlinestoredb:
+    container_name: onlinestoredb
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=webweb
+      - POSTGRES_DB=onlinestore
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    container_name: onlinestore.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:DefaultConnection=Server=onlinestoredb;Port=5432;Database=onlinestore;User Id=admin;Password=webweb"
+    depends_on:
+      - onlinestoredb
+    ports:
+      - "8001:80"

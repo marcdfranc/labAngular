@@ -15,8 +15,7 @@ public class ProductData
     public decimal? Price { get; set; }
 
     [Required]
-    [MaxLength(50)]
-    public string? Category { get; set; }
+    public Guid CategoryId { get; set; }
 
     [JsonIgnore]
     public DateTime Created { get => DateTime.Now;  }

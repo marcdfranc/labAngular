@@ -28,17 +28,11 @@ public class Edit
 
         public async Task<Result<Guid>> Handle(Command request, CancellationToken cancellationToken)
         {
-            var category = await _context.Categories.Where(c => c.Name == request.Product.Category).FirstOrDefaultAsync();
-
-            if (category == null) return Result<Guid>.Failure("Failure on edit Product");
-
             var product = await _context.Products.FindAsync(request.ProductId);
 
             if (product == null) return null!;
 
-            _mapper.Map(product, request.Product);
-
-            product.CategoryId = category.Id;            
+            _mapper.Map(product, request.Product);                      
 
             var isSuccess = await _context.SaveChangesAsync() > 0;
 

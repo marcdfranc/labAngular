@@ -1,5 +1,4 @@
 ﻿using Domain.Products;
-using System;
 namespace Repository;
 
 public class Seed

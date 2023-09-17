@@ -9,7 +9,9 @@ public class MappingProfiles : Profile
     public MappingProfiles()
     {
         CreateMap<CategoryData, Category>();
-        CreateMap<Product, ProductResponse>()
-            .ForMember(x => x.Category, d => d.MapFrom(p => p.Category!.Name));
+        CreateMap<Category, CategoryResponse>();
+
+        CreateMap<ProductData, Product>();
+        CreateMap<Product, ProductResponse>();
     }
 }

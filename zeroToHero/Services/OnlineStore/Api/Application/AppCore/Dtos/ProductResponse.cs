@@ -1,6 +1,8 @@
-﻿namespace Application.AppCore.Dtos;
+﻿using Newtonsoft.Json;
 
-internal class ProductResponse
+namespace Application.AppCore.Dtos;
+
+public class ProductResponse
 {
     public Guid Id { get; set; }
    
@@ -11,6 +13,9 @@ internal class ProductResponse
     public decimal? Price { get; set; }
 
     public DateTime Created { get; set; }
-    
-    public string? Category { get; set; }
+
+    public CategoryResponse? Category { get; set; }
+
+    [JsonIgnore]
+    public Guid? CategoryId { get; set; }
 }

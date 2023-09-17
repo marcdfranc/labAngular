@@ -3,7 +3,6 @@ using Application.AppCore.Dtos;
 using AutoMapper;
 using Domain.Products;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using Repository;
 
 namespace Application.Products;
@@ -28,13 +27,7 @@ public class Create
 
         public async Task<Result<Guid>> Handle(Command request, CancellationToken cancellationToken)
         {
-            var category = await _context.Categories.Where(c => c.Name == request.Product.Category).FirstOrDefaultAsync();
-
-            if (category == null) return Result<Guid>.Failure("Failure on create Product");
-
-            var product = _mapper.Map<Product>(request.Product);
-
-            product.CategoryId = category.Id;
+            var product = _mapper.Map<Product>(request.Product);           
 
             await _context.Products.AddAsync(product);
 

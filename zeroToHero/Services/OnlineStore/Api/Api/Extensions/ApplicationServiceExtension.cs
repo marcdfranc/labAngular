@@ -1,11 +1,10 @@
 ﻿using Application.Categories;
 using Microsoft.EntityFrameworkCore;
-using MediatR;
 using Repository;
-using Microsoft.Extensions.DependencyInjection;
 using Application.AppCore;
 using FluentValidation;
 using Application.AppCore.Validators;
+using FluentValidation.AspNetCore;
 
 namespace Api.Extensions;
 
@@ -22,7 +21,8 @@ public static class ApplicationServiceExtension
         services.AddAutoMapper(typeof(MappingProfiles).Assembly);
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Create.Handler>());
 
-        services.AddValidatorsFromAssemblyContaining<Create>();
+        services.AddFluentValidationAutoValidation();
+        services.AddValidatorsFromAssemblyContaining(typeof(ProductValidator));
 
         return services;
     }

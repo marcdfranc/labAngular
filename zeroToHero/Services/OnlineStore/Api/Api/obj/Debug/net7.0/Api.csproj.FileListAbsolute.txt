@@ -59,3 +59,4 @@ C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Api\bin\Debug\net7.0\Swash
 C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.Newtonsoft.dll
 C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Api\bin\Debug\net7.0\FluentValidation.dll
 C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Api\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Api\bin\Debug\net7.0\FluentValidation.AspNetCore.dll

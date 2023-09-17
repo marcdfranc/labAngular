@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{61D2D35F-1EB1-4AA5-8955-434F543047CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{8CA50A59-37D4-416D-BF95-E90AD659FC30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{8CA50A59-37D4-416D-BF95-E90AD659FC30}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{51074796-FC23-4912-9E31-5C5BB7B7B101}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{8CA50A59-37D4-416D-BF95-E90AD659FC30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CA50A59-37D4-416D-BF95-E90AD659FC30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CA50A59-37D4-416D-BF95-E90AD659FC30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51074796-FC23-4912-9E31-5C5BB7B7B101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51074796-FC23-4912-9E31-5C5BB7B7B101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51074796-FC23-4912-9E31-5C5BB7B7B101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51074796-FC23-4912-9E31-5C5BB7B7B101}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

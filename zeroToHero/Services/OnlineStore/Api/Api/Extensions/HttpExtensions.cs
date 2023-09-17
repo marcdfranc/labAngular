@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Api.Dtos;
+using Newtonsoft.Json;
 
 namespace Api.Extensions;
 
@@ -6,12 +7,12 @@ public static class HttpExtensions
 {
     public static void AddPaginationHeader(this HttpResponse response, int currentPage, int itemsPerPage, int totalItems, int totalPages)
     {
-        var paginationHeader = new
+        var paginationHeader = new Pagination
         {
-            currentPage,
-            itemsPerPage,
-            totalItems,
-            totalPages
+            CurrentPage = currentPage,
+            ItemsPerPage = itemsPerPage,
+            TotalItems = totalItems,
+            TotalPages = totalPages
         };
 
         response.Headers.Add("Pagination", JsonConvert.SerializeObject(paginationHeader));
