@@ -1,0 +1,19 @@
+mat-table {
+    overflow: auto;
+    max-height: 800px;
+    mat-header-cell {
+        mat-icon{
+            text-align: center;
+            margin-left: 7px;
+        }
+    }
+}
+
+
+.action-column {
+    flex: 0 0 115px;
+}
+
+.action-column-header {
+    flex: 0 0 90px;
+}
