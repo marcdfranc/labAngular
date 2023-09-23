@@ -1,0 +1,33 @@
+services:
+  api:
+    build:
+      context: C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api
+      dockerfile: Api/Dockerfile
+    container_name: onlinestore.api
+    depends_on:
+      onlinestoredb:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings:DefaultConnection: Server=onlinestoredb;Port=5432;Database=onlinestore;User
+        Id=admin;Password=webweb
+    image: api
+    ports:
+    - published: 8001
+      target: 80
+  onlinestoredb:
+    container_name: onlinestoredb
+    environment:
+      POSTGRES_DB: onlinestore
+      POSTGRES_PASSWORD: webweb
+      POSTGRES_USER: admin
+    image: postgres:latest
+    ports:
+    - published: 5432
+      target: 5432
+    restart: always
+    volumes:
+    - postgres_data:/var/lib/postgresql/data:rw
+version: '3.4'
+volumes:
+  postgres_data: {}

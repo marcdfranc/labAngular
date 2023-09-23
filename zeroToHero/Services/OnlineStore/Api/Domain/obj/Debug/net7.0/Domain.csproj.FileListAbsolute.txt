@@ -1,0 +1,11 @@
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Domain\bin\Debug\net7.0\Domain.deps.json
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Domain\bin\Debug\net7.0\Domain.dll
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Domain\bin\Debug\net7.0\Domain.pdb
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Domain\obj\Debug\net7.0\Domain.dll
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Domain\obj\Debug\net7.0\refint\Domain.dll
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Domain\obj\Debug\net7.0\Domain.pdb
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Domain\obj\Debug\net7.0\ref\Domain.dll

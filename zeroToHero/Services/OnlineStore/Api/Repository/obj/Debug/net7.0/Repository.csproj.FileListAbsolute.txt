@@ -1,0 +1,15 @@
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Repository\bin\Debug\net7.0\Repository.deps.json
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Repository\bin\Debug\net7.0\Repository.dll
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Repository\bin\Debug\net7.0\Repository.pdb
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Repository\bin\Debug\net7.0\Domain.dll
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Repository\bin\Debug\net7.0\Domain.pdb
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Repository\obj\Debug\net7.0\Repository.csproj.AssemblyReference.cache
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Repository\obj\Debug\net7.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Repository\obj\Debug\net7.0\Repository.AssemblyInfoInputs.cache
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Repository\obj\Debug\net7.0\Repository.AssemblyInfo.cs
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Repository\obj\Debug\net7.0\Repository.csproj.CoreCompileInputs.cache
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Repository\obj\Debug\net7.0\Repository.csproj.CopyComplete
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Repository\obj\Debug\net7.0\Repository.dll
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Repository\obj\Debug\net7.0\refint\Repository.dll
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Repository\obj\Debug\net7.0\Repository.pdb
+C:\sis\labAngular\zeroToHero\Services\OnlineStore\Api\Repository\obj\Debug\net7.0\ref\Repository.dll
