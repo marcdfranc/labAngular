@@ -403,3 +403,12 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio
+/zeroToHero/Services/OnlineStore/Api/.vs
+/zeroToHero/Services/OnlineStore/Api/Api/bin
+/zeroToHero/Services/OnlineStore/Api/Application/bin
+/zeroToHero/Services/OnlineStore/Api/Domain/obj
+/zeroToHero/Services/OnlineStore/Api/Domain/bin
+/zeroToHero/Services/OnlineStore/Api/Repository/bin
+/zeroToHero/Services/OnlineStore/Api/Repository/obj
+/zeroToHero/Services/OnlineStore/Api/Application/obj
+/zeroToHero/Services/OnlineStore/Api/Api/obj
