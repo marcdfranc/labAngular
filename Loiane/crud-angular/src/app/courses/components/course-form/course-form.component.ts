@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NonNullableFormBuilder } from '@angular/forms';
+import { NonNullableFormBuilder, Validators } from '@angular/forms';
 import { CoursesService } from '../../services/courses.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Location } from '@angular/common';
@@ -16,8 +16,20 @@ export class CourseFormComponent implements OnInit {
 	form = this._formBuilder.group(
 	{
 		id: [''],
-		name: [''],
-		category: ['']
+		name: [
+			'',  
+			[
+				Validators.required,
+				Validators.minLength(5),
+				Validators.maxLength(100)
+			]
+		],
+		category: [
+			'',
+			[
+				Validators.required
+			]
+		]
 	});		
 	
 	constructor(
@@ -46,6 +58,26 @@ export class CourseFormComponent implements OnInit {
 
 	onCancel() {
 		this._location.back();
+	}
+
+	getErrorMessage(fieldName: string) {
+		const field = this.form.get(fieldName);
+		if (field?.hasError('required')) {
+			return `${fieldName} is required`;
+		}
+		
+		if (field?.hasError('minlength')) {			
+			const requiredLength = field.errors!['minlength']['requiredLength'];
+			return `The minimum required length is ${requiredLength} characters`;
+		}
+		
+		if (field?.hasError('maxlength')) {			
+			const requiredLength = field.errors!['maxlength']['requiredLength'];
+			return `Maximum length of ${requiredLength} characters exceeded`;
+			
+		}
+
+		return 'Invalid field value';
 	}
 
 	private onSuccess() {
