@@ -1,5 +1,6 @@
 ﻿using Api.Dtos;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace Api.Extensions;
 
@@ -15,7 +16,10 @@ public static class HttpExtensions
             TotalPages = totalPages
         };
 
-        response.Headers.Add("Pagination", JsonConvert.SerializeObject(paginationHeader));
+        var serializerSettings = new JsonSerializerSettings();
+        serializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+
+        response.Headers.Add("Pagination", JsonConvert.SerializeObject(paginationHeader, serializerSettings));
         response.Headers.Add("Access-Control-Expose-Headers", "Pagination");
     }
 }

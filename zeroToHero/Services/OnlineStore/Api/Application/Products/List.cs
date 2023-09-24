@@ -34,19 +34,7 @@ public class List
                 .OrderBy(p => p.Created)
                 .AsQueryable();
 
-            if (!string.IsNullOrWhiteSpace(request.Params.Category))
-            {
-                var category = await _context.Categories.Where(c => c.Name == request.Params.Category).FirstOrDefaultAsync();
-
-                if (category == null)
-                {
-                    query.Where(p => p.CategoryId == null);
-                }
-                else
-                {
-                    query.Where(p => p.CategoryId == category.Id);
-                }
-            }
+            if (request.Params.CategoryId != null) query = query.Where(p => p.CategoryId == request.Params.CategoryId);          
 
             return Result<PagedList<ProductResponse>>.Success(
               await PagedList<ProductResponse>.CreateAsync(query, request.Params.PageNumber, request.Params.PageSize)

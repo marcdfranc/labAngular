@@ -34,6 +34,11 @@
         "operationId": "CreateCategory",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryData"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CategoryData"
@@ -252,6 +257,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryData"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CategoryData"
@@ -319,6 +329,11 @@
         "operationId": "CreateProduct",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductData"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ProductData"
@@ -382,11 +397,12 @@
         "operationId": "ListProducts",
         "parameters": [
           {
-            "name": "Category",
+            "name": "CategoryId",
             "in": "query",
             "style": "form",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -610,6 +626,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductData"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ProductData"

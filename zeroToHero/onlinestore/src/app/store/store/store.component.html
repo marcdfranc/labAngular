@@ -1,0 +1,61 @@
+<div class="container-fluid text-center">
+    <div class="row">
+        <div class="col-3 bg-dark text-white">
+            <h4>Categories</h4>
+            <div class="list-group">
+                <button class="list-group-item list-group-item-action" [ngClass]="!selectedCategory? 'active' : ''"
+                    aria-current="true" (click)="changeCategory('')">Home</button>
+                <button *ngFor="let category of categories" (click)="changeCategory(category.id!)"
+                    class="list-group-item list-group-item-action"
+                    [ngClass]="selectedCategory === category.id? 'active' : ''">{{ category.name }}</button>
+            </div>
+        </div>
+
+        <div class="col-9 bg-body">
+            <h4>Products</h4>
+            <ng-container *ngIf="products$ | async as products">
+
+                <div *ngFor="let product of products.items" class="card text-center my-3">
+                    <div class="card-header">
+                        <h5 class="card-title text-start">
+                            {{ product.name }}
+                            <span class="badge rounded-pill text-bg-primary float-end">{{ product.price | currency: 'GBP'
+                            }}</span>
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">{{ product.description }}</p>
+                    </div>
+                </div>
+                <div class="float-start">
+                    <select
+                        class="form-select  float-begin me-2" 
+                        [value]="pageSize" 
+                        aria-label="Large select example"
+                        (change)="changePageSize($any($event.target).value)"
+                    >                        
+                        
+                        <option value="2">Two Product per page</option>
+                        <option value="4">Four Product per page</option>
+                        <option value="6">Six Product per page</option>
+                        <option value="10">Ten Product per page<</option>
+                      </select>
+                </div>
+
+                <nav aria-label="Page navigation example ">
+
+                    <ul class="pagination justify-content-end">   
+                        <li *ngFor="let page of getPageNumbers(products.pagination)" class="page-item">
+                            <button 
+                                class="page-link" 
+                                [ngClass]="page === products.pagination.currentPage? 'active' : ''"
+                                (click)="changePage(page)" 
+                            >{{page}}</button>
+                        </li>                
+                    </ul>
+                </nav>
+            </ng-container>
+           
+        </div>
+    </div>
+</div>

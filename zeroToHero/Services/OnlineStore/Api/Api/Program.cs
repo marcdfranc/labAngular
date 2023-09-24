@@ -1,13 +1,21 @@
 using Api.Extensions;
 using Api.Middleware;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Serialization;
 using Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddNewtonsoftJson(o =>
+{
+    o.SerializerSettings.Converters.Add(new StringEnumConverter
+    {
+        NamingStrategy = new CamelCaseNamingStrategy()
+    });
+}); 
 
 builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddSwaggerServices();

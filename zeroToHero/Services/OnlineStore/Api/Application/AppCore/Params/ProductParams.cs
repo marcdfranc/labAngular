@@ -2,5 +2,5 @@
 
 public class ProductParams : PagingParams
 {
-    public string? Category { get; set; }
+    public Guid? CategoryId { get; set; }
 }
