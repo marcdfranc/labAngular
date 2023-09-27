@@ -4,7 +4,6 @@ using Application.AppCore.Params;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using Repository;
 
 namespace Application.Products;

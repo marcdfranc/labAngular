@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Domain.Carts;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Products;
 public class Product
@@ -20,4 +21,6 @@ public class Product
     [Required]
     public Guid CategoryId { get; set; }
     public Category? Category { get; set; }
+
+    public List<CartItem> CartItems { get; set; }
 }

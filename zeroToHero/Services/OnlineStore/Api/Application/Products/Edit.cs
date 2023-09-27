@@ -2,7 +2,6 @@
 using Application.AppCore.Dtos;
 using AutoMapper;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using Repository;
 
 namespace Application.Products;

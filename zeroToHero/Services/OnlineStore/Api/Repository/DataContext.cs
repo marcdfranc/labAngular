@@ -1,4 +1,5 @@
-﻿using Domain.Products;
+﻿using Domain.Carts;
+using Domain.Products;
 using Microsoft.EntityFrameworkCore;
 
 namespace Repository;
@@ -12,6 +13,9 @@ public class DataContext : DbContext
 
     public DbSet<Product> Products { get; set; }
     public DbSet<Category> Categories { get; set; }
+    public DbSet<Cart> Carts { get; set; }
+    public DbSet<CartItem> CartItems { get; set; }
+
 
 
     protected override void OnModelCreating(ModelBuilder builder)
@@ -30,6 +34,19 @@ public class DataContext : DbContext
         });
 
         builder.Entity<Category>()
+            .Property(p => p.Created)
+            .HasColumnType("timestamp without time zone");
+
+        builder.Entity<CartItem>(cartItem =>
+        {
+           
+            cartItem.HasOne(ci => ci.Product)
+                .WithMany(p => p.CartItems)
+                .OnDelete(DeleteBehavior.Restrict)
+                .HasForeignKey(c => c.ProductId);
+        });
+
+        builder.Entity<Cart>()
             .Property(p => p.Created)
             .HasColumnType("timestamp without time zone");
 

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable, catchError, map, of } from 'rxjs';
 import { CategoryResponse } from 'src/app/models/category.model';
 import { List, Pagination } from 'src/app/models/pagination.model';
-import { ProductResponse } from 'src/app/models/product.model';
+import { ProductData, ProductResponse } from 'src/app/models/product.model';
 import { CategoryService } from 'src/app/services/category.service';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -54,6 +54,10 @@ export class StoreComponent {
 	changePage(page: number) {
 		this.currentPage = page
 		this.refresh();
+	}
+
+	addProductToCart(product : ProductData) {
+
 	}
 
 }
