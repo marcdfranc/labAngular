@@ -5,7 +5,6 @@ namespace Domain.Carts;
 
 public class CartItem
 {
-    public Guid Id { get; set; }
     [Required]
     public int Quantity { get; set; }
 

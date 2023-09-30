@@ -40,6 +40,7 @@ public class AddItem
             if (cartItem == null)
             {
                 cartItem = _mapper.Map<CartItem>(request.CartItem);
+                cartItem.CartId = cart.Id;
                 await _context.AddAsync(cartItem);
             }
             else

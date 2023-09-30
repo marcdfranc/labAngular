@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CartSummaryComponent } from './cart-summary/cart-summary.component';
-import { CartDetailComponent } from './cart-detail/cart-detail.component';
-import { CheckoutComponent } from './checkout/checkout.component';
+import { CartSummaryComponent } from './containers/cart-summary/cart-summary.component';
+import { CartDetailComponent } from './components/cart-detail/cart-detail.component';
+import { CheckoutComponent } from './containers/checkout/checkout.component';
 import { CartRoutingModule } from './cart-routing.module';
 
 

@@ -39,7 +39,8 @@ public class DataContext : DbContext
 
         builder.Entity<CartItem>(cartItem =>
         {
-           
+            cartItem.HasKey(ci => new { ci.CartId, ci.ProductId });
+
             cartItem.HasOne(ci => ci.Product)
                 .WithMany(p => p.CartItems)
                 .OnDelete(DeleteBehavior.Restrict)

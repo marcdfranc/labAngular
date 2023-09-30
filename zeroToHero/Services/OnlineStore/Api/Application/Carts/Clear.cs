@@ -30,7 +30,7 @@ public class Clear
 
             if (cart == null) return null!;
 
-            if (cart.CartItems.Any()) return Result<Unit>.Success(Unit.Value);
+            if (!cart.CartItems.Any()) return Result<Unit>.Success(Unit.Value);
 
             _context.CartItems.RemoveRange(cart.CartItems);
 

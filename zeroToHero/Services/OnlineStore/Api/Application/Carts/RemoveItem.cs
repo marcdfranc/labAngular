@@ -25,13 +25,26 @@ public class RemoveItem
 
         public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
         {
-            /*var cartItems = await _context.CartItems
+            var cartItem = await _context.CartItems
                 .Where(ci => ci.CartId == request.CartId && ci.ProductId == request.CartItem.ProductId)
                 .FirstOrDefaultAsync();
 
-            if (cartItems == null || ) */
+            if (cartItem == null) return null!;
 
-            throw new NotImplementedException();
+            if (request.CartItem.Quantity > cartItem.Quantity) return Result<Unit>.Failure($"Quantity must be less than {cartItem.Quantity + 1}");
+
+            if (cartItem.Quantity == request.CartItem.Quantity)
+            {
+                _context.CartItems.Remove(cartItem);
+            }
+            else
+            {
+                cartItem.Quantity-= request.CartItem.Quantity;
+            }
+
+            var isSuccess = await _context.SaveChangesAsync() > 0;
+
+            return isSuccess? Result<Unit>.Success(Unit.Value) : Result<Unit>.Failure("Failure on remove Carte Items");
         }
     }
 

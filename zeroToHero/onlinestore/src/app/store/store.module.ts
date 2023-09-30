@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { StoreRoutingModule } from './store-routing.module';
 import { StoreComponent } from './store/store.component';
 import { SharedModule } from '../shared/shared.module';
-import { CartSummaryComponent } from '../cart/cart-summary/cart-summary.component';
+import { CartSummaryComponent } from '../cart/containers/cart-summary/cart-summary.component';
+import { CartModule } from '../cart/cart.module';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { CartSummaryComponent } from '../cart/cart-summary/cart-summary.componen
 	imports: [
 		CommonModule,
 		StoreRoutingModule,
+		CartModule,
 		SharedModule
 	],
 	exports: [

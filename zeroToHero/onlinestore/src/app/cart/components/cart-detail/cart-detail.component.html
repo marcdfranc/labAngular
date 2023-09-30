@@ -1,0 +1,43 @@
+<nav class="navbar  navbar-expand-lg bg-dark">
+  <div class="container-fluid ">
+    <a class="navbar-brand text-white" href="#">Online Store</a>    
+  </div>
+</nav>
+
+<div class="text-center m-3">
+    <h3>Your Cart</h3>
+</div>
+
+<div class="card mx-3 p-3" >
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Quantity</th>
+            <th scope="col">Product</th>
+            <th scope="col" class="text-end">Price</th>
+            <th scope="col" class="text-end">SubTotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+<button type="button" class="btn btn-dark m-5 float-end" (click)="goToCheckout()">Go to Checkout</button>
